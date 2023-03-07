@@ -26,7 +26,7 @@ metadata:
     name: sample-python
 spec:
     ports:
-    - name: “sample-python”
+    - name: sample-python
       targetPort: 80
       port: 5000
       nodePort: 30275
