@@ -12,18 +12,18 @@ spec:
   metadata:
    labels:
     app: sample-python
-spec:
- containers:
- - image: 018556395605.dkr.ecr.ap-northeast-1.amazonaws.com/python-app:latest
-   name: python-flask
-   imagePullPolicy: Always
-   ports:
+  spec:
+   containers:
+   - image: 018556395605.dkr.ecr.ap-northeast-1.amazonaws.com/python-app:latest
+     name: python-flask
+     imagePullPolicy: Always
+     ports:
      - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-    name: sample-python-svc
+    name: sample-python
 spec:
     ports:
     - name: “sample-python”
@@ -31,6 +31,6 @@ spec:
       port: 5000
       nodePort: 30275
       protocol: TCP
-   selector:
+    selector:
       app: sample-python
-   type: NodePort
+    type: NodePort
